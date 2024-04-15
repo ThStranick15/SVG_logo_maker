@@ -1,6 +1,6 @@
 
-    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="110" cy="110" r="100" fill="blue" />
-    <text x="100" y="100" font-size="30" text-anchor="middle" fill="green">tt</text>
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="10,10 190,10 190,190 10,190" fill="#FF5733" />
+    <text x="100" y="120" font-size="70" text-anchor="middle" fill="black">TTT</text>
     </svg>
     

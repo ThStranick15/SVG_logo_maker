@@ -11,7 +11,7 @@ async function getUserInput(){
 
     {
         name:'textColor',
-        message: 'Please input a text color in text or hexadecimal'
+        message: 'Please input a text color in text or hexadecimal (with #)'
     },
 
     {
@@ -23,7 +23,7 @@ async function getUserInput(){
 
     {
         name:'shapeColor',
-        message:'Please input a shape color in text or hexadecimal'
+        message:'Please input a shape color in text or hexadecimal (with #)'
     }
 ])
 
@@ -41,23 +41,29 @@ async function getUserInput(){
 
 function generateSVG(input){
     let shape
+    let x
+    let y
     if(input.shape == 'Square'){
         shape = new Square(input.shapeColor)
+        x = 100
+        y = 120
     }
     else if(input.shape == 'Triangle'){
         shape = new Triangle(input.shapeColor)
+        x = 110
+        y = 180
     }
     else{
         shape = new Circle(input.shapeColor)
+        x = 90
+        y = 110
+
     }
-    console.log(shape.render())
-    console.log(input.textColor)
-    console.log(input.text)
 
     const outputHTML = `
-    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
     ${shape.render()}
-    <text x="110" y="110" font-size="30" text-anchor="middle" fill="${input.textColor}">${input.text}</text>
+    <text x="${x}" y="${y}" font-size="70" text-anchor="middle" fill="${input.textColor}">${input.text}</text>
     </svg>
     `
 
@@ -70,7 +76,7 @@ async function outputSVG(genHTML){
             console.log(err)
         }
         else{
-            console.log('Generated SVG')
+            console.log('Generated logo.svg')
         }
     })
 }
